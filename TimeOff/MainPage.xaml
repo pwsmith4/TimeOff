@@ -2,41 +2,38 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TimeOff.MainPage"
-             Title="My Time Off">
+             Title="My Time Off"
+             
+             xmlns:tabView="clr-namespace:Syncfusion.Maui.TabView;assembly=Syncfusion.Maui.TabView">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add New Time Off Request" Clicked="TimeOff_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <tabView:SfTabView BackgroundColor="#f6f6f6">
+            <tabView:SfTabItem Header="Upcoming">
+                <tabView:SfTabItem.Content>
+                    <Grid BackgroundColor="White">
+                        <tabView:SfTabView x:Name="nestedTabView"
+                                                    TabBarBackground="#FDF8F6"
+                                                    TabWidthMode="Default"
+                                                    TabBarPlacement="Bottom"
+                                                    BackgroundColor="Transparent"
+                                                    IndicatorBackground="#6200EE"
+                                                    IndicatorPlacement="Top" >
+                            <tabView:SfTabView.Items>
+                                <tabView:SfTabItem Header="Time Off">
+                                    <tabView:SfTabItem.Content>
+                                        <Grid >
 
-    <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
+                                        </Grid>
+                                    </tabView:SfTabItem.Content>
+                                </tabView:SfTabItem>
+                            </tabView:SfTabView.Items>
+                        </tabView:SfTabView>
+                    </Grid>
+                </tabView:SfTabItem.Content>
+            </tabView:SfTabItem>
 
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
-
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
-
-        </VerticalStackLayout>
-    </ScrollView>
-
+        </tabView:SfTabView>
+    </ContentPage.Content>
 </ContentPage>

@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Syncfusion.Maui.Core.Hosting;
+using TimeOff.ViewModel;
+
 namespace TimeOff;
 
 public static class MauiProgram
@@ -8,6 +10,7 @@ public static class MauiProgram
 	{
 		var builder = MauiApp.CreateBuilder();
 		builder
+			.ConfigureSyncfusionCore()
 			.UseMauiApp<App>()
 			.ConfigureFonts(fonts =>
 			{
@@ -18,7 +21,12 @@ public static class MauiProgram
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
+        //DI for Views
+        builder.Services.AddTransient<MainPage>();
 
-		return builder.Build();
+		//DI for ViewModels
+        builder.Services.AddTransient<MainPageViewModel>();
+
+        return builder.Build();
 	}
 }
