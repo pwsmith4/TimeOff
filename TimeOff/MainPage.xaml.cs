@@ -12,7 +12,7 @@ public partial class MainPage : ContentPage
 		
 	}
 
-    private void TimeOff_Clicked(object sender, EventArgs e)
+    private void TimeOffCommand(object sender, EventArgs e)
     {
 
     }

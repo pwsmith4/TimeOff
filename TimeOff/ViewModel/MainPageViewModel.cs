@@ -1,3 +1,5 @@
+using Microsoft.Maui.Controls;
+
 namespace TimeOff.ViewModel;
 
 public class MainPageViewModel : ContentView
@@ -6,6 +8,7 @@ public class MainPageViewModel : ContentView
 	{
 		
 	}
+
     private async Task NavigateToWelcome()
     {
         if (Shell.Current.FlyoutBehavior == FlyoutBehavior.Disabled)

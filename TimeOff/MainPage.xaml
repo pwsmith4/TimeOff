@@ -5,8 +5,9 @@
              Title="My Time Off"
              
              xmlns:tabView="clr-namespace:Syncfusion.Maui.TabView;assembly=Syncfusion.Maui.TabView">
+    
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add New Time Off Request" Clicked="TimeOff_Clicked"/>
+        <ToolbarItem Text="New Time Off Request" IconImageSource="{x:Null}" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <tabView:SfTabView BackgroundColor="#f6f6f6">
