@@ -3,11 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TimeOff.MainPage"
              Title="My Time Off"
-             
              xmlns:tabView="clr-namespace:Syncfusion.Maui.TabView;assembly=Syncfusion.Maui.TabView">
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="New Time Off Request" IconImageSource="{x:Null}" />
+        <ToolbarItem Text="New Time Off Request" Command="{Binding TimeOffCommand}" IconImageSource="{x:Null}"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <tabView:SfTabView BackgroundColor="#f6f6f6">

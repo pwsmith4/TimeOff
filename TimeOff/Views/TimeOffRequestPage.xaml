@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TimeOff.Views.TimeOffRequestPage"
+             xmlns:local="clr-namespace:TimeOff.Behavior"
+             xmlns:calendar="clr-namespace:Syncfusion.Maui.Calendar;assembly=Syncfusion.Maui.Calendar"
+             Title="New Time Off Request">
+    <StackLayout>
+        <calendar:SfCalendar x:Name="calendar"  
+                            EnablePastDates="False"
+                            SelectionMode="Range">
+            <calendar:SfCalendar.Behaviors>
+                <local:CalendarBehavior />
+            </calendar:SfCalendar.Behaviors>
+        </calendar:SfCalendar>
+        <HorizontalStackLayout>
+            <Label Text="From" Padding="10"/>
+            <Label Text="                                                                       End"  HorizontalOptions="End" Padding="10"/>
+            
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label x:Name="current" Text="{Binding StartDate}" FontAttributes="Bold" Padding="10"/>
+            <Label Text="                                                                end date" FontAttributes="Bold" Padding="10" HorizontalOptions="End"/>
+        </HorizontalStackLayout>
+
+
+    </StackLayout>
+    
+</ContentPage>

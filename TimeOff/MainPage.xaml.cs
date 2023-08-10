@@ -2,6 +2,8 @@
 
 using System.Linq.Expressions;
 using TimeOff.ViewModel;
+using TimeOff.Views;
+
 public partial class MainPage : ContentPage
 {
 
@@ -12,9 +14,6 @@ public partial class MainPage : ContentPage
 		
 	}
 
-    private void TimeOffCommand(object sender, EventArgs e)
-    {
 
-    }
 }
 
