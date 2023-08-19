@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TimeOff.MainPage"
              Title="My Time Off"
+             xmlns:cards="clr-namespace:TimeOff.Cards"
              xmlns:tabView="clr-namespace:Syncfusion.Maui.TabView;assembly=Syncfusion.Maui.TabView">
     
     <ContentPage.ToolbarItems>
@@ -24,7 +25,7 @@
                                 <tabView:SfTabItem Header="Time Off">
                                     <tabView:SfTabItem.Content>
                                         <Grid >
-
+                                            <cards:TimeOffRequestCard/>
                                         </Grid>
                                     </tabView:SfTabItem.Content>
                                 </tabView:SfTabItem>

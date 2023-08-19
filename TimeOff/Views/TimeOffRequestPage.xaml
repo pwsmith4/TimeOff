@@ -7,21 +7,46 @@
              Title="New Time Off Request">
     <StackLayout>
         <calendar:SfCalendar x:Name="calendar"  
+                            TodayHighlightBrush="{StaticResource Primary}"                            
                             EnablePastDates="False"
-                            SelectionMode="Range">
+                            SelectionMode="Range"
+                             StartRangeSelectionBackground="{StaticResource Secondary}"
+                             EndRangeSelectionBackground="{StaticResource Secondary}"
+                             SelectionBackground="{StaticResource Tertiary}">
+            
             <calendar:SfCalendar.Behaviors>
                 <local:CalendarBehavior />
             </calendar:SfCalendar.Behaviors>
         </calendar:SfCalendar>
         <HorizontalStackLayout>
-            <Label Text="From" Padding="10"/>
-            <Label Text="                                                                       End"  HorizontalOptions="End" Padding="10"/>
+            <Label Text="    Start" Padding="10"/>
+            <Label Text="                                                                     End"  HorizontalOptions="End" Padding="10"/>
             
         </HorizontalStackLayout>
         <HorizontalStackLayout>
-            <Label x:Name="current" Text="{Binding StartDate}" FontAttributes="Bold" Padding="10"/>
-            <Label Text="                                                                end date" FontAttributes="Bold" Padding="10" HorizontalOptions="End"/>
+            <Label x:Name="start" Text="{Binding StartTime}" FontAttributes="Bold" Padding="10"/>
+            <Label x:Name="space" Text="{Binding Space}"/>
+            <Label Text="{Binding EndTime}" FontAttributes="Bold" Padding="10" HorizontalOptions="EndAndExpand" HorizontalTextAlignment="End" />
         </HorizontalStackLayout>
+        <Picker Title="Select a Time Off Type" >
+            <Picker.Items>
+                <x:String>Time Off</x:String>
+                <x:String>Paternity Leave</x:String>
+            </Picker.Items>
+        </Picker>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+
+            </Grid.RowDefinitions>
+            <Border Grid.Row ="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="White" Stroke="Gray" StrokeThickness="4">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="5,5,5,5" />
+                </Border.StrokeShape>
+                <Entry Grid.Row ="1" Placeholder="Comments" TextColor="Black" BackgroundColor="White" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+            </Border>
+        </Grid>
+        <Button BackgroundColor="{StaticResource Primary}" Command="{Binding TimeOffRequestingCommand}" Text="Request Time Off" HorizontalOptions="CenterAndExpand" Margin="10" MinimumWidthRequest="375" CornerRadius="50"/>
 
 
     </StackLayout>

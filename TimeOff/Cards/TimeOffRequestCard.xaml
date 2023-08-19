@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Frame xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TimeOff.Cards.TimeOffRequestCard"
+             xmlns:cards="clr-namespeace:TimeOff.Cards">
+    <Border
+        MinimumHeightRequest="150"
+        MaximumHeightRequest="250"
+        VerticalOptions="Start"
+        StrokeThickness="2">
+        <VerticalStackLayout>
+            <HorizontalStackLayout>
+        <Label Text="Time Off" Margin="5" FontAttributes="Bold" />
+            <Label Text="Approved" Margin="5" TextColor="Green" MinimumWidthRequest="270" HorizontalTextAlignment="End" HorizontalOptions="End"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+            <Label Text=" From" Margin="5"/>
+                <Label Text="To" Margin="5" MinimumWidthRequest="270" HorizontalOptions="End" HorizontalTextAlignment="End"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="{Binding StartTime}"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+        
+    </Border>
+
+</Frame>

@@ -1,6 +1,8 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using CommunityToolkit.Mvvm.Messaging;
 using Syncfusion.Maui.Calendar;
+
 namespace TimeOff.Behavior
 {
     public class CalendarBehavior : Behavior<SfCalendar>
@@ -8,6 +10,7 @@ namespace TimeOff.Behavior
         private SfCalendar sfCalendar;
         private DateTime startDate;
         private DateTime endDate;
+
 
         public DateTime StartDate
         {
@@ -34,6 +37,8 @@ namespace TimeOff.Behavior
             this.sfCalendar = bindable;
             this.sfCalendar.SelectionChanged += SfCalendar_SelectionChanged;
         }
+        // Define a message name
+        public const string DatesSelectedMessage = "DatesSelected";
 
         private void SfCalendar_SelectionChanged(object sender, CalendarSelectionChangedEventArgs e)
         {
@@ -48,11 +53,14 @@ namespace TimeOff.Behavior
                 {
                     endDate = (DateTime)this.sfCalendar.SelectedDateRange.StartDate;
                 }
-                
-                App.Current.MainPage.DisplayAlert("StartDate:" + " " + startDate.ToString("MM/dd/yyyy"), "EndDate:" + " " + endDate.ToString("MM/dd/yyyy"), "OK");
+                // Send a message with the start date as the payload
+                WeakReferenceMessenger.Default.Send(new StartDateChangedMessage(startDate));
+                WeakReferenceMessenger.Default.Send(new EndDateChangedMessage(endDate));
+
             }
         }
-
+        public record StartDateChangedMessage(DateTime StartDate);
+        public record EndDateChangedMessage(DateTime EndDate);
         protected override void OnDetachingFrom(SfCalendar bindable)
         {
             base.OnDetachingFrom(bindable);
