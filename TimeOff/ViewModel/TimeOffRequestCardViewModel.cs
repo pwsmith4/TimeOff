@@ -14,9 +14,6 @@ public partial class TimeOffRequestCardViewModel : BaseViewModel
 
     public TimeOffRequestCardViewModel()
 	{
-        WeakReferenceMessenger.Default.Register<StartDateChangedMessage>(this, (recipient, message) =>
-        {
-            StartTime = message.StartDate.ToString("d");
-        });
+        
     }
 }

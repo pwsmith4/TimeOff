@@ -24,9 +24,19 @@
                             <tabView:SfTabView.Items>
                                 <tabView:SfTabItem Header="Time Off">
                                     <tabView:SfTabItem.Content>
-                                        <Grid >
-                                            <cards:TimeOffRequestCard/>
-                                        </Grid>
+                                        <StackLayout>
+                                            <ListView ItemsSource="{Binding TimeOffRequestCards}"
+                                                      
+                                                      HasUnevenRows="True">
+                                                <ListView.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <ViewCell>
+                                                            <cards:TimeOffRequestCard />
+                                                        </ViewCell>
+                                                    </DataTemplate>
+                                                </ListView.ItemTemplate>
+                                            </ListView>
+                                        </StackLayout>
                                     </tabView:SfTabItem.Content>
                                 </tabView:SfTabItem>
                             </tabView:SfTabView.Items>

@@ -61,7 +61,7 @@ public partial class TimeOffRequestPageViewModel : BaseViewModel
         {
             TimeOffRequests.Add(request);
         }
-
+        
         // Reset the start and end times
         StartTime = "Not Selected";
         EndTime = "Not Selected";
