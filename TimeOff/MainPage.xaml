@@ -25,8 +25,7 @@
                                 <tabView:SfTabItem Header="Time Off">
                                     <tabView:SfTabItem.Content>
                                         <StackLayout>
-                                            <ListView ItemsSource="{Binding TimeOffRequestCards}"
-                                                      
+                                            <ListView ItemsSource="{Binding TimeOffRequestCards}"                                                      
                                                       HasUnevenRows="True">
                                                 <ListView.ItemTemplate>
                                                     <DataTemplate>

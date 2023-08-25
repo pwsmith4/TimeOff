@@ -31,7 +31,7 @@
         <Picker Title="Select a Time Off Type" >
             <Picker.Items>
                 <x:String>Time Off</x:String>
-                <x:String>Paternity Leave</x:String>
+                <x:String>Family Leave</x:String>
             </Picker.Items>
         </Picker>
         <Grid RowSpacing="0">
